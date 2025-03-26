@@ -50,13 +50,13 @@ You can install Postman via this website: https://www.postman.com/downloads/
 ## Mandatory Checklists (Publisher)
 -   [V] Clone https://gitlab.com/ichlaffterlalu/bambangshop to a new repository.
 -   **STAGE 1: Implement models and repositories**
-    -   [ ] Commit: `Create Subscriber model struct.`
-    -   [ ] Commit: `Create Notification model struct.`
-    -   [ ] Commit: `Create Subscriber database and Subscriber repository struct skeleton.`
-    -   [ ] Commit: `Implement add function in Subscriber repository.`
-    -   [ ] Commit: `Implement list_all function in Subscriber repository.`
-    -   [ ] Commit: `Implement delete function in Subscriber repository.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-1" questions in this README.
+    -   [V] Commit: `Create Subscriber model struct.`
+    -   [V] Commit: `Create Notification model struct.`
+    -   [V] Commit: `Create Subscriber database and Subscriber repository struct skeleton.`
+    -   [V] Commit: `Implement add function in Subscriber repository.`
+    -   [V] Commit: `Implement list_all function in Subscriber repository.`
+    -   [V] Commit: `Implement delete function in Subscriber repository.`
+    -   [V] Write answers of your learning module's "Reflection Publisher-1" questions in this README.
 -   **STAGE 2: Implement services and controllers**
     -   [ ] Commit: `Create Notification service struct skeleton.`
     -   [ ] Commit: `Implement subscribe function in Notification service.`
@@ -77,6 +77,15 @@ This is the place for you to write reflections:
 ### Mandatory (Publisher) Reflections
 
 #### Reflection Publisher-1
+
+1) Single struct saja tanpa trait sebenernya sudah dapat bekerja apabila hanya akan ada satu tipe Subscriber. Namun,
+dari sisi scalabilitynya akan menghasilkan desain yang lebih sulit untuk dikembangkan. Sehingga, lebih baik jika
+menggunakan interface (trait) tambahan.<br />
+2) Menggunakan Vec sebagai penyipanan sudah cukup, namun kurang efektif dari segi waktu karena apabila kita mencari
+data dalam Vec perlu melakukan iterasi satu persatu. Sehingga, untuk penyimpanan data lebih direkomendasikan menggunakan
+DashMap yang lebih cepat untuk melakukan pencarian data karena tinggal melakukan referensi dari key yang ingin dicari. <br />
+3) Masih memerlukan DashMap karena agar program kita thread-safe kita perlu mengimplementasikan DashMap pada penyimpanan
+data. Penggunaan singleton pattern tidak akan membuat program thread-safe. <br />
 
 #### Reflection Publisher-2
 
