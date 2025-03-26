@@ -93,9 +93,19 @@ data. Penggunaan singleton pattern tidak akan membuat program thread-safe. <br /
 dapat mempermudah untuk melakukan testing dengan melakukan mock database dan logic test secara mandiri. <br />
 2) Ketika ada perubahan pada logic database maka akan mempengaruhi business logic, sehingga kode lebih susah untuk di
 rawat. Kemudian, apabila semua logic dalam Model yang sama ada kemungkinan ketika kita ingin mengakses salah satu model
-saja diperlukan untuk mengambil model lainnya sehingga menambah kompleksitas kode.<br />
+saja diperlukan untuk mengambil model lainnya sehingga menambah kompleksitas kode. <br />
 3) Postman sangat membantu dalam melakukan API Testing. Dengan adanya Postman, saya dapat melakukan testing Endpoints
 dengan mudah karena dapat melakukan pengiriman request GET, POST, PUT, DELETE untuk memeriksa kerja API. Fitur yang menarik
-bagi saya adalah fitur Newman, yang dapat membuat saya melakukan tests ketika sedang melakukan integrasi CI/CD.<br />
+bagi saya adalah fitur Newman, yang dapat membuat saya melakukan tests ketika sedang melakukan integrasi CI/CD. <br />
 
 #### Reflection Publisher-3
+
+1) Tutorial kali ini menggunakan variasi Observer Pattern Push Model (publisher push data to subscribers). <br />
+2) Keuntungan menggunakan pull model adalah Overhead data lebih sedikit karena publisher hanya menyediakan data yang
+diminta secara eksplisit dan Subscribers memiliki konrol yang lebih banyak karena subscriber dapat menentukan kapan
+ingin melakukan pull uodate. Kerugian menggunakan pull model adalah latensi lebih tinggi karena subscribers bisa saja
+tidak mendapat update secara langsung dan subscriber berpotensi menggunakan data yang sudah lama karena subscriber
+belum memeriksa update, maka aplikasi menggunakan data yang masih lama. <br />
+3) Proses pengiriman notifikasi akan menjadi sangat lama sehingga ada delay karena sistem harus mengirim notifikasi
+satu per satu ke setiap subscriber. Kemudian, sistem notifikasi yang tidak multi-threading juga memiliki Scalability
+yang buruk karena semakin banyak subscriber sistem akan semakin lambat.
