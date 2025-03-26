@@ -58,12 +58,12 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   [V] Commit: `Implement delete function in Subscriber repository.`
     -   [V] Write answers of your learning module's "Reflection Publisher-1" questions in this README.
 -   **STAGE 2: Implement services and controllers**
-    -   [ ] Commit: `Create Notification service struct skeleton.`
-    -   [ ] Commit: `Implement subscribe function in Notification service.`
-    -   [ ] Commit: `Implement subscribe function in Notification controller.`
-    -   [ ] Commit: `Implement unsubscribe function in Notification service.`
-    -   [ ] Commit: `Implement unsubscribe function in Notification controller.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
+    -   [V] Commit: `Create Notification service struct skeleton.`
+    -   [V] Commit: `Implement subscribe function in Notification service.`
+    -   [V] Commit: `Implement subscribe function in Notification controller.`
+    -   [V] Commit: `Implement unsubscribe function in Notification service.`
+    -   [V] Commit: `Implement unsubscribe function in Notification controller.`
+    -   [V] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
 -   **STAGE 3: Implement notification mechanism**
     -   [ ] Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
     -   [ ] Commit: `Implement notify function in Notification service to notify each Subscriber.`
@@ -88,5 +88,14 @@ DashMap yang lebih cepat untuk melakukan pencarian data karena tinggal melakukan
 data. Penggunaan singleton pattern tidak akan membuat program thread-safe. <br />
 
 #### Reflection Publisher-2
+
+1) Untuk memenuhi single responsibility principle (SRP), membuat aplikasi memiliki scalability dan maintainability yang baik,
+dapat mempermudah untuk melakukan testing dengan melakukan mock database dan logic test secara mandiri. <br />
+2) Ketika ada perubahan pada logic database maka akan mempengaruhi business logic, sehingga kode lebih susah untuk di
+rawat. Kemudian, apabila semua logic dalam Model yang sama ada kemungkinan ketika kita ingin mengakses salah satu model
+saja diperlukan untuk mengambil model lainnya sehingga menambah kompleksitas kode.<br />
+3) Postman sangat membantu dalam melakukan API Testing. Dengan adanya Postman, saya dapat melakukan testing Endpoints
+dengan mudah karena dapat melakukan pengiriman request GET, POST, PUT, DELETE untuk memeriksa kerja API. Fitur yang menarik
+bagi saya adalah fitur Newman, yang dapat membuat saya melakukan tests ketika sedang melakukan integrasi CI/CD.<br />
 
 #### Reflection Publisher-3
