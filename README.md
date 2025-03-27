@@ -100,12 +100,12 @@ bagi saya adalah fitur Newman, yang dapat membuat saya melakukan tests ketika se
 
 #### Reflection Publisher-3
 
-1) Tutorial kali ini menggunakan variasi Observer Pattern Push Model (publisher push data to subscribers). <br />
-2) Keuntungan menggunakan pull model adalah Overhead data lebih sedikit karena publisher hanya menyediakan data yang
-diminta secara eksplisit dan Subscribers memiliki konrol yang lebih banyak karena subscriber dapat menentukan kapan
-ingin melakukan pull uodate. Kerugian menggunakan pull model adalah latensi lebih tinggi karena subscribers bisa saja
-tidak mendapat update secara langsung dan subscriber berpotensi menggunakan data yang sudah lama karena subscriber
-belum memeriksa update, maka aplikasi menggunakan data yang masih lama. <br />
+1) Tutorial kali ini menggunakan variasi Observer Pattern Pull Model (subscribers pull data from the publisher). <br />
+2) Keuntungan menggunakan push model adalah data yang didapatkan oleh subscribers merupakan data realtime dari publisher. 
+Namun, kerugian dari model ini adalah kode akan memiliki kompleksitas yang lebih tinggi karena harus mengatur 
+notification yang gagal terkirim, seperti pada subscriber yang sedang offline, dan memiliki scalability yang lebih buruk 
+karena semakin besar subscribernya akan semakin besar juga alur jaringannya, sehingga proses pengirimannya akan menjadi 
+semakin lama. <br />
 3) Proses pengiriman notifikasi akan menjadi sangat lama sehingga ada delay karena sistem harus mengirim notifikasi
 satu per satu ke setiap subscriber. Kemudian, sistem notifikasi yang tidak multi-threading juga memiliki Scalability
 yang buruk karena semakin banyak subscriber sistem akan semakin lambat.
